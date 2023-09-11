@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{A73B61AD-94E7-44B2-8700-7E4E2889DF20}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>CodeAnalysis</RootNamespace>
+        <AssemblyName>CodeAnalysis</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="mscorlib" />
+        <Reference Include="System" />
+        <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Collections.Immutable.8.0.0-preview.3.23174.8\lib\net462\System.Collections.Immutable.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Reflection.Metadata, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Reflection.Metadata.8.0.0-preview.3.23174.8\lib\net462\System.Reflection.Metadata.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="CodeAnalysisResources.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>CodeAnalysisResources.resx</DependentUpon>
+        </Compile>
+        <Compile Include="CSharpResources.Designer.cs">
+          <DesignTime>True</DesignTime>
+          <AutoGen>True</AutoGen>
+          <DependentUpon>CSharpResources.resx</DependentUpon>
+        </Compile>
+        <Compile Include="Lexer\AbstractLexer.cs" />
+        <Compile Include="Lexer\Lexer.cs" />
+        <Compile Include="Lexer\LexerCache.cs" />
+        <Compile Include="Lexer\SpecialType.cs" />
+        <Compile Include="Lexer\SyntaxNodeCache.cs" />
+        <Compile Include="Lexer\TextKeyedCache.cs" />
+        <Compile Include="Lexer\TokenInfo.cs" />
+        <Compile Include="Parser\LanguageParser.cs" />
+        <Compile Include="Parser\Parselet\BinaryExpressionParselet.cs" />
+        <Compile Include="Parser\Parselet\IInfixParselet.cs" />
+        <Compile Include="Parser\Parselet\IPrefixParselet.cs" />
+        <Compile Include="Parser\Parselet\LiteralExpressionParselet.cs" />
+        <Compile Include="Parser\Parselet\PrefixUnaryExpressionParselet.cs" />
+        <Compile Include="Parser\SyntaxFactoryContext.cs" />
+        <Compile Include="Parser\SyntaxParser.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Syntax\LSharpSyntaxNode.cs" />
+        <Compile Include="Syntax\InternalSyntax\GreenNode.cs" />
+        <Compile Include="Syntax\InternalSyntax\InternalSyntax.cs" />
+        <Compile Include="Syntax\InternalSyntax\LanguageNames.cs" />
+        <Compile Include="Syntax\InternalSyntax\LSharpSyntaxNode.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxFactory.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxFacts.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxKind.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxList.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxList.WithLotsOfChildren.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxList.WithManyChildren.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxList.WithManyChildrenBase.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxList.WithThreeChildren.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxList.WithTwoChildren.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxListBuilder.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxToken.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxTokenWithTrivia.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxTokenWithValue.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxTokenWithValueAndTrivia.cs" />
+        <Compile Include="Syntax\InternalSyntax\SyntaxTrivia.cs" />
+        <Compile Include="Syntax\Syntax.cs" />
+        <Compile Include="Syntax\SyntaxFactory.cs" />
+        <Compile Include="Syntax\SyntaxNode.cs" />
+        <Compile Include="Syntax\SyntaxToken.cs" />
+        <Compile Include="Syntax\SyntaxTrivia.cs" />
+        <Compile Include="Syntax\SyntaxTriviaList.cs" />
+        <Compile Include="Syntax\SyntaxTriviaList.Enumerator.cs" />
+        <Compile Include="Syntax\SyntaxTriviaList.Reversed.cs" />
+        <Compile Include="Text\SlidingTextWindow.cs" />
+        <Compile Include="Text\SourceText.cs" />
+        <Compile Include="Text\StringText.cs" />
+        <Compile Include="Text\TextSpan.cs" />
+        <Compile Include="Utility\ArrayElement.cs" />
+        <Compile Include="Utility\CachingFactory.cs" />
+        <Compile Include="Utility\ExceptionUtilities.cs" />
+        <Compile Include="Utility\Hash.cs" />
+        <Compile Include="Utility\ObjectPool.cs" />
+        <Compile Include="Utility\PooledStringBuilder.cs" />
+        <Compile Include="Utility\StringTable.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="TodoList.md" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="App.config" />
+      <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="CodeAnalysisResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>CodeAnalysisResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Include="CSharpResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>CSharpResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Scripting\" />
+      <Folder Include="VM\" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

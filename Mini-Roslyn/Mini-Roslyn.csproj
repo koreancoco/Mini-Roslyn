@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{F5210D7A-FDE5-4C83-921F-BF01F655972B}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>MiniRoslyn</RootNamespace>
+        <AssemblyName>MiniRoslyn</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="CodeAnalysis\Binding\Binder.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundAssignmentExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundBinaryExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundBinaryOperator.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundBinaryOperatorKind.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundBlockStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundCallExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundConditionalGotoStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundConversionExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundDoWhileStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundErrorExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundExpressionStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundForStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundFunctionDeclaration.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundGlobalScope.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundGotoStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundIfStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundLabelStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundLiteralExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundLoopStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundNode.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundNodeKind.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundNodePrinter.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundProgram.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundScope.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundUnaryExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundUnaryOperator.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundUnaryOperatorKind.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundVariableDeclaration.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundVariableExpression.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundWhileStatement.cs" />
+        <Compile Include="CodeAnalysis\Binding\BoundLabel.cs" />
+        <Compile Include="CodeAnalysis\Binding\Conversion.cs" />
+        <Compile Include="CodeAnalysis\Compilation.cs" />
+        <Compile Include="CodeAnalysis\Diagnostic\Diagnostic.cs" />
+        <Compile Include="CodeAnalysis\Diagnostic\DiagnosticBag.cs" />
+        <Compile Include="CodeAnalysis\EvaluationResult.cs" />
+        <Compile Include="CodeAnalysis\Lowering\BoundTreeRewriter.cs" />
+        <Compile Include="CodeAnalysis\Scripting\Evaluator.cs" />
+        <Compile Include="CodeAnalysis\Lowering\Lowerer.cs" />
+        <Compile Include="CodeAnalysis\Symbols\BuiltinFunctions.cs" />
+        <Compile Include="CodeAnalysis\Symbols\FunctionSymbol.cs" />
+        <Compile Include="CodeAnalysis\Symbols\GlobalVariableSymbol.cs" />
+        <Compile Include="CodeAnalysis\Symbols\LocalVariableSymbol.cs" />
+        <Compile Include="CodeAnalysis\Symbols\ParameterSymbol.cs" />
+        <Compile Include="CodeAnalysis\Symbols\Symbol.cs" />
+        <Compile Include="CodeAnalysis\Symbols\SymbolKind.cs" />
+        <Compile Include="CodeAnalysis\Symbols\TypeSymbol.cs" />
+        <Compile Include="CodeAnalysis\Symbols\VariableSymbol.cs" />
+        <Compile Include="CodeAnalysis\Syntax\AssignmentExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\BinaryExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\BlockStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\BreakStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\CallExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\CompilationUnitSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\ContinueStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\ConversionExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\DoWhileStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\ElseClauseSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\ExpressionStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\ExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\ForStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\FunctionDeclarationSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\GlobalStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\IfStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\Lexer.cs" />
+        <Compile Include="CodeAnalysis\Syntax\LiteralExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\MemberSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\NameExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\ParameterSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\ParenthesizedExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\Parser.cs" />
+        <Compile Include="CodeAnalysis\Syntax\SeparatedSyntaxList.cs" />
+        <Compile Include="CodeAnalysis\Syntax\StatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\SyntaxFacts.cs" />
+        <Compile Include="CodeAnalysis\Syntax\SyntaxKind.cs" />
+        <Compile Include="CodeAnalysis\Syntax\SyntaxNode.cs" />
+        <Compile Include="CodeAnalysis\Syntax\SyntaxToken.cs" />
+        <Compile Include="CodeAnalysis\Syntax\SyntaxTree.cs" />
+        <Compile Include="CodeAnalysis\Syntax\TypeClauseSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\UnaryExpressionSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\VariableDeclarationSyntax.cs" />
+        <Compile Include="CodeAnalysis\Syntax\WhileStatementSyntax.cs" />
+        <Compile Include="CodeAnalysis\Text\SourceText.cs" />
+        <Compile Include="CodeAnalysis\Text\TextLine.cs" />
+        <Compile Include="CodeAnalysis\Text\TextSpan.cs" />
+        <Compile Include="CodeAnalysis\Visitor\IBoundExpressionVisitor.cs" />
+        <Compile Include="CodeAnalysis\Visitor\IBoundStatementVisitor.cs" />
+        <Compile Include="CodeAnalysis\Visitor\IExpressionVisitor.cs" />
+        <Compile Include="CodeAnalysis\Visitor\IStatementVisitor.cs" />
+        <Compile Include="IO\TextWriterExtensions.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Todo.md" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
