@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAnalysis", "CodeAnalysis\CodeAnalysis.csproj", "{A73B61AD-94E7-44B2-8700-7E4E2889DF20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini-Roslyn", "Mini-Roslyn\Mini-Roslyn.csproj", "{F5210D7A-FDE5-4C83-921F-BF01F655972B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mrc", "mrc\mrc.csproj", "{241FDDCB-00DA-4FEA-A260-B7DC3A70CA34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini-Roslyn-Test", "Mini-Roslyn-Test\Mini-Roslyn-Test.csproj", "{76E7B75D-EFF5-4077-9A65-30F1F257455F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A73B61AD-94E7-44B2-8700-7E4E2889DF20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A73B61AD-94E7-44B2-8700-7E4E2889DF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A73B61AD-94E7-44B2-8700-7E4E2889DF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A73B61AD-94E7-44B2-8700-7E4E2889DF20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5210D7A-FDE5-4C83-921F-BF01F655972B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5210D7A-FDE5-4C83-921F-BF01F655972B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5210D7A-FDE5-4C83-921F-BF01F655972B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5210D7A-FDE5-4C83-921F-BF01F655972B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241FDDCB-00DA-4FEA-A260-B7DC3A70CA34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241FDDCB-00DA-4FEA-A260-B7DC3A70CA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241FDDCB-00DA-4FEA-A260-B7DC3A70CA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241FDDCB-00DA-4FEA-A260-B7DC3A70CA34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E7B75D-EFF5-4077-9A65-30F1F257455F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E7B75D-EFF5-4077-9A65-30F1F257455F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E7B75D-EFF5-4077-9A65-30F1F257455F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E7B75D-EFF5-4077-9A65-30F1F257455F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C53A079C-C1C3-45D9-9DAF-694C42BB48B2}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		XptScriptLib\XptScriptLib.projitems*{821f5bad-d32c-4e09-bed2-2c39069f9e9c}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal
